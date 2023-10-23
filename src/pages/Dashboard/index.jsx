@@ -19,7 +19,7 @@ export const Dashboard=() =>{
                         <Col key={index} xs={4} md={4} sm={4} lg={4}>
                             <Card className="glass-container p-0 cursor-pointer" onClick={()=>{nav("/Edit")}}>
                                 <Card.Img src={value} style={{ height: "250px", objectFit: "cover" }} />
-                                <Card.Text className="mt-0">Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
+                                <Card.Text className="mt-0">Some quick example text to build on the card title and make up the bulk of the content.</Card.Text>
                             </Card>
                         </Col>
                     ))}

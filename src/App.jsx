@@ -14,9 +14,8 @@ export const App = () => {
         dispatch(GetAlluserAction("a23e4567-e89b-12d3-a456-426655440009"));
     }, []);
 
-    // const data = useSelector((state) => state?.Getusers?.GetAllusersModel);
-    // You can use 'data' as needed in your component.
-
+    const data = useSelector((state) => state?.Getusers?.GetAllusersModel);
+    console.log(data);
     return (
         <>
             <div className="bg_color">
