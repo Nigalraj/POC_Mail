@@ -1,21 +1,34 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GetAlluserAction } from "./redux/actions/GetAlluserAction";
+import "./App.css";
+// import { Container } from "react-bootstrap";
+import Header from "./components/header/header";
+import { Dashboard } from "./pages/Dashboard";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function App() {
+export const App = () => {
     const dispatch = useDispatch();
-    
 
-    useEffect(()=>{
-        dispatch(GetAlluserAction("a23e4567-e89b-12d3-a456-426655440009"))
-            },[])
-            const data=useSelector((state)=>state?.Getusers?.GetAllusersModel)
-            console.log(data,"data ")
+    useEffect(() => {
+        dispatch(GetAlluserAction("a23e4567-e89b-12d3-a456-426655440009"));
+    }, []);
+
+    // const data = useSelector((state) => state?.Getusers?.GetAllusersModel);
+    // You can use 'data' as needed in your component.
+
     return (
         <>
-            <h1>hello world </h1>
+            <div className="bg_color">
+                <BrowserRouter>
+                    <Header />
+                    <Routes>
+                        <>
+                            <Route path="/" element={<Dashboard />} />
+                        </>
+                    </Routes>
+                </BrowserRouter>
+            </div>
         </>
     );
-}
-
-export default App;
+};

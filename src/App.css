@@ -1,0 +1,15 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-color: rgb(242, 244, 246) !important;
+    padding: 0;
+}
+
+.bg-purple {
+    background-color: #755BB4;
+}
+
+.container {
+    height: 100%;
+}
