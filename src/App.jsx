@@ -15,7 +15,7 @@ export const App = () => {
     }, []);
 
     const data = useSelector((state) => state?.Getusers?.GetAllusersModel);
-    console.log(data);
+    console.log(data,"data");
     return (
         <>
             <div className="bg_color">
