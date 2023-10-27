@@ -1,31 +1,24 @@
-import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-// import { GetAlluserAction } from "./redux/actions/GetAlluserAction";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./components/header/header";
 import { Dashboard } from "./pages/Dashboard";
-import { Route, Routes } from "react-router-dom";
 import { Template } from "./pages/Template";
 import Login from "./pages/login/Login";
 import { Signup } from "./pages/signUp/signUp";
+
 export const App = () => {
-    // const dispatch = useDispatch();
-    const [show, setShow] = useState(true);
-    const location = window.location.pathname;
-    useEffect(() => {
-        if (location == "/") {
-            setShow(false);
-        } else {
-            setShow(true);
-        }
-        // dispatch(GetAlluserAction("a23e4567-e89b-12d3-a456-426655440009"));
-    }, [location]);
+    const location = useLocation();
+
+    const showHeader = location.pathname !== "/";
+
     const data = useSelector((state) => state?.Getusers?.GetAllusersModel);
-    console.log(data, "data");
+    console.log(data);
+
     return (
         <>
             <div className="bg_color">
-                {show && <Header />}
+                {showHeader && <Header />}
                 <Routes>
                     <>
                         <Route path="/" element={<Login />} />
