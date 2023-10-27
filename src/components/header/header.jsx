@@ -23,7 +23,7 @@ function Header() {
                                     onClick={() => {
                                         setActive(i);
                                         if (active === 0) {
-                                            nav("/dashboard");
+                                            nav("/");
                                         }
                                     }}
                                 >
