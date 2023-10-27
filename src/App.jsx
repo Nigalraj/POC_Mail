@@ -6,11 +6,13 @@ import Header from "./components/header/header";
 import { Dashboard } from "./pages/Dashboard";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Template } from "./pages/Template";
+import Login from "./pages/login/Login";
 
 export const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        
         dispatch(GetAlluserAction("a23e4567-e89b-12d3-a456-426655440009"));
     }, []);
 
@@ -23,7 +25,8 @@ export const App = () => {
                     <Header />
                     <Routes>
                         <>
-                            <Route path="/" element={<Dashboard />} />
+                            <Route path="/" element={<Login />} />
+                            <Route path="/dashboard" element={<Dashboard />} />
                             <Route path="/edit" element={<Template />} />
                         </>
                     </Routes>
