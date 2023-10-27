@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { GetAlluserAction } from "./redux/actions/GetAlluserAction";
+import {  useSelector } from "react-redux";
+// import { GetAlluserAction } from "./redux/actions/GetAlluserAction";
 import "./App.css";
 import Header from "./components/header/header";
 import { Dashboard } from "./pages/Dashboard";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import {  Route, Routes } from "react-router-dom";
 import { Template } from "./pages/Template";
 import Login from "./pages/login/Login";
 import { Signup } from "./pages/signUp/signUp";
@@ -12,7 +12,6 @@ export const App = () => {
     // const dispatch = useDispatch();
     const [show, setShow] = useState(true);
     const location = window.location.pathname;
-    console.log(location,"out<<>>");
     useEffect(() => {
         if (location == '/') {
             setShow(false)
@@ -20,7 +19,6 @@ export const App = () => {
         else{
             setShow(true)
         }
-    console.log(location,"in<<>>");
         // dispatch(GetAlluserAction("a23e4567-e89b-12d3-a456-426655440009"));
     }, [location]);
     const data = useSelector((state) => state?.Getusers?.GetAllusersModel);
