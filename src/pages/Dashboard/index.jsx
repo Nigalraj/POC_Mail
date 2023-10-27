@@ -8,13 +8,13 @@ export const Dashboard=() =>{
     return (
         <>
             <div>
-                <Row className="p-3 ">
+                <Row className="p-3 mx-0">
                     <Col xs={12} sm={12} md={12} lg={12}>
                         <h5 className="m-0">{dashboardLabels?.TEMPLATE}</h5>
                     </Col>
                 </Row>
                 <hr className="m-0" />
-                <Row className="p-3  ">
+                <Row className="p-3 mx-0 ">
                     {image.map((value, index) => (
                         <Col key={index} xs={4} md={4} sm={4} lg={4}>
                             <Card className="glass-container p-0 cursor-pointer" onClick={()=>{nav("/Edit")}}>
