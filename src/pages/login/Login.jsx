@@ -29,7 +29,7 @@ const Login = () => {
     return (
         <div className="login-container">
             <div className="login-box text-white">
-               <img src={logo} alt="logo" srcset="" className='mx-auto d-flex' style={{width:"31%"}} />
+               <img src={logo} alt="logo"  className='mx-auto d-flex' style={{width:"31%"}} />
                 <form onSubmit={handleSubmit}>
                     <div className="input-container my-3">
                         <label htmlFor="username" className='fw-semibold' >Username</label>
