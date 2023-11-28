@@ -35,7 +35,6 @@ export const inspectLable = {
         { icon: <AlignHorizontalLeft width={18} />, label: "right" },
         { icon: <AlignHorizontalRight width={18} />, label: "left" },
     ],
-    array1:["a","b","c","d","e","f","g"]
 };
 export const dashboardLabels = {
     TEMPLATE: "Template",

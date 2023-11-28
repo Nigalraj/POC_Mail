@@ -4,7 +4,6 @@ import "../../common.css";
 import "./template.css";
 import { EditLabel, fontFamily, inspectLable, templateLabel } from "../../constants";
 import { isArray, isEmpty, isObject } from "lodash";
-import { PlusSquareDotted } from "@styled-icons/bootstrap/PlusSquareDotted";
 
 export const Template = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -27,6 +26,7 @@ export const Template = () => {
         button: "",
         headingType: "",
         headingColor: "",
+        headingBackgroundColor:""
     });
     const handleValueChange = (value, inputvalue) => {
         setInputValues((prevValues) => ({
@@ -108,15 +108,22 @@ export const Template = () => {
                                     ))}
                                 </div>
                                 <p className="mt-3 mb-1">{inspectLable?.TEXT}</p>
-                                <input
-                                    className="rounded-3 border-0"
-                                    type="color"
-                                    onChange={(e) => {
-                                        setTemplateField((pre) => ({ ...pre, headingColor: e.target.value }));
-                                    }}
-                                />
+                                    <input
+                                        className="rounded-3 border-0"
+                                        type="color"
+                                        onChange={(e) => {
+                                            setTemplateField((pre) => ({ ...pre, headingColor: e.target.value }));
+                                        }}
+                                    />
                                 <p className="mt-3 mb-1">{inspectLable?.BACKGROUND}</p>
-                                <PlusSquareDotted width={30} className="cursor-pointer " />
+                                
+                                <input
+                                        className="rounded-3 border-0"
+                                        type="color"
+                                        onChange={(e) => {
+                                            setTemplateField((pre) => ({ ...pre, headingBackgroundColor: e.target.value }));
+                                        }}
+                                    />
                                 <p className="mt-3 mb-1">{inspectLable?.FONT}</p>
                                 <select className="form-select form-select-sm" aria-label=".form-select-sm example">
                                     <option selected>Select the font family </option>
@@ -186,7 +193,7 @@ export const Template = () => {
                             onClick={() => {
                                 textareaRef.current.focus();
                             }}
-                            style={{ color: templateField?.headingColor }}
+                            style={{ color: templateField?.headingColor,backgroundColor:templateField?.headingBackgroundColor }}
                         >
                             {isObject(templateField) && !isEmpty(templateField?.heading) && templateField?.heading}
                         </p>
