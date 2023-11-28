@@ -1,30 +1,38 @@
-import { useSelector } from "react-redux";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Header from "./components/header/header";
-import { Dashboard } from "./pages/Dashboard";
+import { Dashboard } from "./pages/Dashboard/index";
 import { Template } from "./pages/Template";
-import Login from "./pages/login/Login";
-import { Signup } from "./pages/signUp/signUp";
+import Signup from "./pages/sigup";
+import Login from "./pages/Login/login";
+import ProtectedRoute from "./pages/PrivateRoute";
+import NotFoundPage from "./pages/PageNotFound";
+import { ToastContainer } from "react-toastify";
+import { useSelector } from "react-redux";
+import Orginfo from "./pages/Orginfo";
+
 
 export const App = () => {
-    const location = useLocation();
-
-    const showHeader = location.pathname !== "/";
-
-    const data = useSelector((state) => state?.Getusers?.GetAllusersModel);
-    console.log(data);
+    const data = useSelector((state) => state.Loginstore.LoginModel);
+    console.log(data, "datadata");
+    const localstorege = () => {
+        if (localStorage.getItem("USER")) return true;
+        else return false;
+    };
 
     return (
         <>
             <div className="bg_color">
-                {showHeader && <Header />}
+                <ToastContainer />
                 <Routes>
                     <>
                         <Route path="/" element={<Login />} />
                         <Route path="/signup" element={<Signup />} />
-                        <Route path="/dashboard" element={<Dashboard />} />
-                        <Route path="/edit" element={<Template />} />
+                        <Route path="/orginfo" element={<Orginfo />} />
+                        <Route element={<ProtectedRoute user={localstorege()} />}>
+                            <Route path="/dashboard" element={<Dashboard />} />
+                            <Route path="/edit" element={<Template />} />
+                        </Route>
+                        <Route path="*" element={<NotFoundPage />} />
                     </>
                 </Routes>
             </div>

@@ -5,7 +5,7 @@ import "../../common.css";
 import { useNavigate } from "react-router-dom";
 export const Dashboard=() =>{
     const nav=useNavigate()
-    return (
+        return (
         <>
             <div>
                 <Row className="p-3 mx-0">
