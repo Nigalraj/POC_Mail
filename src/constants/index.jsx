@@ -7,6 +7,8 @@ import { AlignVerticalTop } from "@styled-icons/material-outlined/AlignVerticalT
 import { AlignVerticalBottom } from "@styled-icons/material-outlined/AlignVerticalBottom";
 import { AlignHorizontalLeft } from "@styled-icons/material-outlined/AlignHorizontalLeft";
 import { AlignHorizontalRight } from "@styled-icons/material/AlignHorizontalRight";
+
+
 export const headerLable = {
     BRANDNAME: "Mail template",
     header: ["Dashboard", "Settings"],
@@ -27,13 +29,17 @@ export const inspectLable = {
     PADDING: "Padding",
     HIDDEN: "Hidden",
     LEVELNAME: ["H1", "H2", "H3"],
-    FWEIGHT: ["Regular", "Bold"],
-    ALIGNMENTI: [<FormatAlignLeft width={20} />, <FormatAlignRight width={20} />, <FormatAlignCenter width={20} />],
+    FWEIGHT: ["Normal", "Bold"],
+    ALIGNMENTI: [
+        { icon: <FormatAlignLeft width={20} />, label: "left" },
+        { icon: <FormatAlignCenter width={20} />, label: "center" },
+        { icon: <FormatAlignRight width={20} />, label: "right" },
+    ],
     PADDINGI: [
-        { icon: <AlignVerticalTop width={18} />, label: "top" },
-        { icon: <AlignVerticalBottom width={18} />, label: "bottom" },
-        { icon: <AlignHorizontalLeft width={18} />, label: "right" },
-        { icon: <AlignHorizontalRight width={18} />, label: "left" },
+        { icon: <AlignVerticalTop width={18} />, label: "paddingTop" },
+        { icon: <AlignVerticalBottom width={18} />, label: "paddingBottom" },
+        { icon: <AlignHorizontalRight width={18} />, label: "paddingRight" },
+        { icon: <AlignHorizontalLeft width={18} />, label: "paddingLeft" },
     ],
 };
 export const dashboardLabels = {
