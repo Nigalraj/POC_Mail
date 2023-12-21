@@ -1,0 +1,12 @@
+.p_tag:hover {
+    border: blue 2px solid;
+    padding: 0;
+}
+
+.P_normal {
+    border: rgb(242, 244, 246) 2px solid;
+}
+
+.pointer {
+    cursor: pointer;
+}
