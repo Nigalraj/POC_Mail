@@ -34,7 +34,6 @@ export const Template = () => {
         headingFontfamily: "",
         fontweight: "",
         alignment: "",
-        content: "Test value for the heading ",
     });
 
     const handleValueChange = (value, inputvalue) => {
@@ -92,13 +91,12 @@ export const Template = () => {
                                 templateField={templateField}
                                 textareaRef={textareaRef}
                                 align={align}
-                               
                             />
                         )}
                         {activeIndex === 0 && <TemplateHome />}
                     </Col>
                     <Col xs={8} md={8} lg={8} className="p-5">
-                        <DisplayPage templateField={templateField} textareaRef={textareaRef} align={align} />
+                        <DisplayPage templateField={templateField} textareaRef={textareaRef} align={align} setTemplateField={setTemplateField} />
                     </Col>
                 </Row>
             </Container>
