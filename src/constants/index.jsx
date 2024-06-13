@@ -18,7 +18,7 @@ export const headerLable = {
 export const templateLabel = ["General", "Styles", "Inspect"];
 
 export const inspectLable = {
-    HEADING: "HEADING BLOCK",
+    HEADING: "HEADING BLOCK ",
     CONTENT: "Content",
     LEVEL: "Level",
     TEXT: "Text color",
@@ -52,7 +52,7 @@ export const loginLable = {
     EMAIL: "Email",
     LOGINTITLE: "Login",
 };
-export const BASEURL = "https://3b0d-2405-201-e059-b805-13d-b0c4-5bbe-3998.ngrok-free.app/";
+export const BASEURL = " https://23de-2405-201-e059-b805-651d-8827-a979-240b.ngrok-free.app/";
 
 export const ValidRoutes = ["/dashboard", "/edit"];
 

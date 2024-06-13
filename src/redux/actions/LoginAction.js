@@ -8,7 +8,7 @@ export const LoginAction = (payload) => async (dispatch) => {
         payload: { loading: true },
     });
     try {
-        const { data } = await axios.post(`${BASEURL}auth/login`, payload);
+        const { data } = await axios.post(`${BASEURL}api/v1/login`, payload);
         localStorage.setItem("USER", data && data?.username);
         await dispatch({
             type: Login.SUCCESS,
@@ -22,3 +22,4 @@ export const LoginAction = (payload) => async (dispatch) => {
         });
     }
 };
+

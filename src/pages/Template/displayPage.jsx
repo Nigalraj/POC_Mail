@@ -1,11 +1,10 @@
 import { isEmpty, isObject } from "lodash";
-import { useState } from "react";
+import { useContext } from "react";
+import { UserContext } from "../../context";
 
 /* eslint-disable react/prop-types */
 const DisplayPage = ({ templateField, textareaRef, align, setTemplateField }) => {
-    const [textBoxes, setTextBoxes] = useState([]);
-    const [selectedTextBox, setSelectedTextBox] = useState(null);
-
+    const { textBoxes, setTextBoxes, selectedTextBox, setSelectedTextBox } = useContext(UserContext);
     const handleAddTextBox = () => {
         setTextBoxes((prevTextBoxes) => [...prevTextBoxes, { value: "", isHidden: false }]);
     };
