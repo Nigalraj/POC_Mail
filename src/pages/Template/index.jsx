@@ -7,6 +7,7 @@ import { isArray, isEmpty, isObject } from "lodash";
 import TemplateHome from "./homePage";
 import EditPage from "./editPage";
 import DisplayPage from "./displayPage";
+import StylePage from "./stylePage";
 
 export const Template = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -85,6 +86,9 @@ export const Template = () => {
                                     />
                                 </div>
                             ))}
+                            {activeIndex === 1 &&(
+                                <StylePage/>
+                            )}
                         {activeIndex === 2 && (
                             <EditPage
                                 setAlign={setAlign}
