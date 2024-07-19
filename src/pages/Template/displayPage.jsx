@@ -6,6 +6,7 @@ const DisplayPage = ({ templateField, textareaRef, align }) => {
     return (
         <>
             <div className="position-relative" style={{ backgroundColor: templateField?.headingBackgroundColor }}>
+                
                 {templateField?.heading && (
                     <p
                         className={`p_tag P_normal ${templateField.headingType.toLowerCase()}`}

@@ -2,12 +2,13 @@ import { useRef, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "../../common.css";
 import "./template.css";
-import { EditLabel, templateLabel } from "../../constants";
+import { EditLabel, templateLabel, icon } from "../../constants";
 import { isArray, isEmpty, isObject } from "lodash";
 import TemplateHome from "./homePage";
 import EditPage from "./editPage";
 import DisplayPage from "./displayPage";
 import StylePage from "./stylePage";
+import ScreeningPage from "./ScreeningPage";
 
 export const Template = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -64,9 +65,19 @@ export const Template = () => {
                                 </div>
                             ))}
                     </Col>
-                    <Col xs={8} className="p-1 mt-2">
-                        <b>{isObject(inputValues) && !isEmpty(inputValues?.subject) && inputValues?.subject}</b>&nbsp;
-                        <label className="fw-lighter"> {isObject(inputValues) && !isEmpty(inputValues?.preheader) && inputValues?.preheader}</label>
+                    <Col xs={8} className="p-1 mt-2 d-flex justify-content-between">
+                        <div>
+                            <b>{isObject(inputValues) && !isEmpty(inputValues?.subject) && inputValues?.subject}</b>&nbsp;
+                            <label className="fw-lighter"> {isObject(inputValues) && !isEmpty(inputValues?.preheader) && inputValues?.preheader}</label>
+                        </div>
+                        <div className="d-flex align-items-center me-4">
+                            {icon.ICON.map((value, i) => (
+                                <div className={`border px-2 py-1 ${value?.rounded} ${value?.key || ''}`} key={i}>
+                                    <label>{value?.icon}</label>
+                                    {value?.path && <span className="ms-2">{value?.path}</span>}
+                                </div>
+                            ))}
+                        </div>
                     </Col>
                 </Row>
                 <Row className="p-0">
@@ -86,9 +97,9 @@ export const Template = () => {
                                     />
                                 </div>
                             ))}
-                            {activeIndex === 1 &&(
-                                <StylePage/>
-                            )}
+                        {activeIndex === 1 && (
+                            <StylePage />
+                        )}
                         {activeIndex === 2 && (
                             <EditPage
                                 setAlign={setAlign}
@@ -96,13 +107,13 @@ export const Template = () => {
                                 templateField={templateField}
                                 textareaRef={textareaRef}
                                 align={align}
-                               
                             />
                         )}
                         {activeIndex === 0 && <TemplateHome />}
                     </Col>
                     <Col xs={8} md={8} lg={8} className="p-5">
-                        <DisplayPage templateField={templateField} textareaRef={textareaRef} align={align} />
+                        {/* <DisplayPage templateField={templateField} textareaRef={textareaRef} align={align} /> */}
+                        <ScreeningPage/>
                     </Col>
                 </Row>
             </Container>

@@ -10,3 +10,49 @@
 .pointer {
     cursor: pointer;
 }
+
+.no-backdrop {
+    background-color: transparent !important;
+}
+
+.custom-dropdown-button .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important; 
+    left: 50% !important;;
+    transform: translateX(-50%) !important;
+}
+
+.custom-dropdown-button .dropdown-toggle::after {
+    display: none; 
+}
+
+.width{
+    width: 100vh;
+}
+
+.custom-dropdown-button .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.custom-dropdown-button .dropdown-toggle > svg {
+    width: 22px;
+    color: #1889DF; 
+}
+
+.custom-dropdown-button .dropdown-toggle:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.custom-dropdown-button .dropdown-toggle:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+
+

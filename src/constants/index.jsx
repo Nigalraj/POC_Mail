@@ -7,13 +7,42 @@ import { AlignVerticalTop } from "@styled-icons/material-outlined/AlignVerticalT
 import { AlignVerticalBottom } from "@styled-icons/material-outlined/AlignVerticalBottom";
 import { AlignHorizontalLeft } from "@styled-icons/material-outlined/AlignHorizontalLeft";
 import { AlignHorizontalRight } from "@styled-icons/material/AlignHorizontalRight";
-
+import { PencilSquare } from "@styled-icons/bootstrap/PencilSquare";
+import { Eye } from "@styled-icons/fluentui-system-filled/Eye";
+import { Computer } from "@styled-icons/material-outlined/Computer";
+import { Mobile } from "@styled-icons/boxicons-regular/Mobile"
+import { MenuFold } from "@styled-icons/remix-line/MenuFold";
+import { AddCircle } from "@styled-icons/fluentui-system-filled/AddCircle";
+import { Heading } from "@styled-icons/boxicons-regular/Heading";
+import { CardHeading } from "@styled-icons/bootstrap/CardHeading";
+import { SmartButton } from "@styled-icons/material-outlined/SmartButton";
+import { Images } from "@styled-icons/bootstrap/Images";
 
 export const headerLable = {
     BRANDNAME: "Mail template",
     header: ["Dashboard", "Settings"],
     paths: ["/dashboard"],
 };
+
+export const icon = {
+    ICON : [
+        { icon: <PencilSquare width={18} />, label: "paddingTop", rounded:"rounded-start"},
+        { icon: <Eye width={18} />, label: "paddingBottom",rounded:"rounded-end" },
+        {icon: <Computer width={18}/>, label:"padding",key:"ms-3",rounded:"rounded-start"},
+        {icon: <Mobile width={18}/>, label:"padding", rounded:"rounded-end"},
+        {icon: <MenuFold width={18}/>, label:"padding",key:"ms-3", path:"Navigator" ,rounded:"rounded"}
+    ],
+}
+
+export const screen = {
+    ICON : [
+        { icon: <AddCircle width={22} style={{ color: '#1889DF' }}/>},
+        { icon: <Heading width={22}/>},
+        { icon : <CardHeading width={22}/>},
+        { icon : <SmartButton width={22}/>},
+        { icon : <Images width={22}/>}
+    ]
+}
 
 export const templateLabel = ["General", "Styles", "Inspect"];
 
